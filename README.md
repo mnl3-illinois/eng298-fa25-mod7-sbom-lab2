@@ -22,7 +22,7 @@ After completing this lab, you will be able to:
 * Metadata (version number, description, dependencies), and
 * Instructions for installing, configuring, and removing it.
 
- These are managed by Ubuntu’s package manager ('apt') and include:
+ These are managed by Ubuntu’s package manager (`apt`) and include:
 * System utilities (e.g., bash, coreutils, curl),
 * Programming languages and runtimes (e.g., python3, gcc),
 * Libraries used by other programs (e.g., libssl, libc6), and
