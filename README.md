@@ -32,7 +32,7 @@ In this assignment, when you run commands like:
 ```bash
 dpkg -l
 apt list --installed
-syft packages:apt
+syft scan:apt
 ```
 
 ...you are examining all the packages your Codespace depends on to function.
