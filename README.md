@@ -139,14 +139,16 @@ grype sbom:deliverables/system_sbom_before.json -o table > deliverables/system_v
 
 Put together, this command line says, *"With admin privileges, show me all packages on this system that have updates available.”*
    
-3. If packages are listed, choose at least three (3) and record their current and target versions. Continue with the next step (4. Apply system updates). **NOTE**: If no packages are listed (only `“Listing… Done”`), record that your system is already fully up-to-date and note this in your reflection and jump to Part 4: Post-Update Analysis.
+3. If packages are listed, choose at least three (3), record their current and target versions in the `reflection.md` file and continue with the next step (4. Apply system updates).
+
+   **NOTE**: If no packages are listed (only `“Listing… Done”`), record that your system is already fully up-to-date in the `reflection.md` file and jump to Part 4: Post-Update Analysis.
    
-4. Apply system updates:
+5. Apply system updates:
 
    ```bash
    sudo apt upgrade -y
    ```
-5. Verify updates were applied successfully:
+6. Verify updates were applied successfully:
 
     ```bash
     sudo apt list --upgradable
