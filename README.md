@@ -3,7 +3,7 @@
 ### **Exercise Overview**
 In Module 7, you explored how assurance, verification, and transparency strengthen system design and maintenance. This lab assignment extends those concepts into the realm of secure maintenance, demonstrating how visibility through SBOMs enables continuous verification of the operating environment itself.
 
-Rather than scanning application code, you will analyze the Ubuntu Linux system that powers your GitHub Codespace - enumerating installed packages, identifying vulnerabilities, applying patches, and verifying improvement through renewed SBOM analysis. 
+Rather than scanning application code, you will analyze the Ubuntu Linux system that powers your GitHub Codespace - enumerating installed packages, identifying vulnerabilities, applying patches, and validating the system’s security posture using a second SBOM and vulnerability scan. 
 
 In their Security Engineering principles, <b><a href="https://doi.org/10.1109/PROC.1975.9939" target="_blank">(Saltzer & Schroeder, 1975)</a></b> emphasized that every access — and by extension, every component — must be continuously verified to maintain trust. By applying this principle to your Codespaces environment, the lab illustrates how assurance extends beyond applications to the underlying platform itself.
 Through system-level SBOM generation, vulnerability assessment, and patch verification, you will connect visibility (SBOM) with action (patching) — transforming transparency into sustained assurance for secure operations.
