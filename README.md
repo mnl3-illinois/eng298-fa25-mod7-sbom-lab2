@@ -87,17 +87,13 @@ Before generating SBOMs, let's first collect information about the current Ubunt
 syft scan dir:/ -o spdx-json > deliverables/system_sbom_before.json
 ```
 
-**Syntax Breakdown**:
-
-**syft** → run Syft
-
-**scan** → “scan” subcommand; used to scan the Codespace’s Ubuntu filesystem for installed packages
-
-**dir:/** → scan the root filesystem (/) for installed packages
-
-**-o spdx-json** → output as SPDX JSON
-
-**> deliverables/system_sbom_before.json** → save to your deliverables folder
+| **Syntax Breakdown** | **Description**
+|---------------|------------------------|
+| **syft** | Program used to create an SBOM in an .spdx format
+|**scan** | Program sub-command used to *scan* the Codespace’s Ubuntu filesystem for installed packages
+|**dir:/** | The directory to be scanned; in this case, root filesystem (/)
+|**-o spdx-json** | Output the results in an SPDX JSON format
+|**> deliverables/system_sbom_before.json**| Save the previous line's results in a file named *system_sbom_before.json* in the deliverables folder
 
 2. Use Grype to scan the SBOM for known vulnerabilities:
 
