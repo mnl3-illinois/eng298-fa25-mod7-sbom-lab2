@@ -1,32 +1,31 @@
 # Reflection – Module 7: Maintaining Secure Systems with SBOMs & Patching
 
 ### Baseline Findings
-After generating the SBOM using Syft, I found that the system included a large number of Ubuntu-managed packages that make up the full Codespaces environment. The Grype scan identified vulnerabilities across multiple severities, including several High and Medium issues.
+When I generated the SBOM with Syft, I realized how many Ubuntu packages are actually running in the background for the Codespace. The Grype scan also showed a bunch of vulnerabilities across different levels, mostly High and Medium.
 
-I selected one CVE from the report: CVE-2023-44487. According to the NVD, this vulnerability is caused by a weakness in the HTTP/2 protocol called “Rapid Reset,” where an attacker repeatedly opens and cancels streams to overwhelm a server. This matters because it can lead to massive denial-of-service attacks that take systems offline by exhausting their resources.
+I focused on CVE-2023-44487. It's an HTTP/2 issue called “Rapid Reset,” where an attacker repeatedly opens and cancels streams to overwhelm a server. This can lead to major denial-of-service attacks because it drains server resources super fast.
 
 ---
 
 ### Packages with Available Updates
-When I ran `sudo apt list --upgradable`, the system returned “Listing... Done,” which means there were no packages with updates available. The Codespace environment was already fully up-to-date, so no upgrades were required.
-
+When I ran `sudo apt list --upgradable`, it just said “Listing... Done,” meaning there were zero updates available. So the system was already totally up-to-date and didn’t need any upgrades.
 
 ---
 
 ### How does maintaining updated packages illustrate complete mediation?
-Keeping packages updated ensures that every component of the system is continuously checked and verified before it runs. Complete mediation requires reevaluating trust constantly, and patching enforces this by removing outdated or vulnerable software.
+Updating packages makes sure every part of the system keeps getting re-verified before it runs. Complete mediation is about constantly checking access, and patching helps enforce that by removing outdated or vulnerable components.
 
 ---
 
 ### Why is generating a new SBOM after patching essential to assurance?
-A new SBOM proves that patches were actually applied. It gives visibility into the new system state and confirms that vulnerable versions were replaced, providing the transparency needed for system assurance.
+A new SBOM basically confirms that the patches actually went through. It gives a clear, updated picture of the system so you can see that the old vulnerable versions were replaced.
 
 ---
 
 ### What risks persist when organizations delay system updates?
-Delaying updates leaves known vulnerabilities exposed and increases the risk of exploitation. Attackers routinely scan for unpatched systems, so even short delays can create a dangerous exposure window.
+Delaying updates leaves known vulnerabilities exposed and easy for attackers to find. Since attackers actively scan for unpatched systems, even a short delay can create unnecessary security risks.
 
 ---
 
 ### How does this exercise embody the secure design lifecycle principle?
-This exercise demonstrates how visibility (SBOM), verification (vulnerability scanning), and action (patching) work together in a continuous loop. Instead of one-time security efforts, it reinforces ongoing maintenance and assurance in the secure design lifecycle.
+This whole process shows how security is continuous. You get visibility through the SBOM, verify with vulnerability scans, take action with patching, and then repeat. It fits the secure design lifecycle because it focuses on ongoing assurance instead of one-time fixes.
